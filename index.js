@@ -22,8 +22,8 @@ function generatePassword(length) {
 
 // update password 1 and password 2 elements with the generated passwords
 function updatePasswords() {
-    const password1 = generatePassword(12) // generates a 12 character password
-    const password2 = generatePassword(12) // generates a 12 character password
+    const password1 = generatePassword(15) // generates a 15 character password
+    const password2 = generatePassword(15) // generates a 15 character password
 
     password1Element.textContent = password1
     password2Element.textContent = password2
