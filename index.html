@@ -5,22 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500;700;800&display=swap" rel="stylesheet">
     <title>Password Generator App</title>
 </head>
 <body>
+
+    <div class="main-container">
+
+        <div class="toggle-container darkmode-toggle-container">
+            <label for="darkmode-toggle" id="darkmode-label">
+                <span class="dark-mode-text">Light Mode?</span>
+                <span class="light-mode-text">Dark Mode?</span>
+            </label>
+            <div class="toggle-switch">
+                <input type="checkbox" id="darkmode-toggle" class="toggle-switch-checkbox">
+                <label for="darkmode-toggle" class="toggle-switch-label"></label>
+            </div>
+        </div>
+        
+
     <div class="container">
         <h1>Generate a <span>random password.</span></h1>
         <h2>Never use an insecure password again.</h2>
-        <button id="password-button">Generate passwords</button>
+
+        <div class="special-character-section">
+
+            <!-- Select Password Length -->
+            <div class="password-selector-container">
+                <label for="password-length">How many characters to make password?</label>
+                <select id="password-length">
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                </select>
+            </div>
+
+            <!-- Toggle Special Characters -->
+            <div class="toggle-container">
+                <label for="special-char-toggle">Use Special Characters?</label>
+                <div class="toggle-switch">
+                    <input type="checkbox" id="special-char-toggle" class="toggle-switch-checkbox">
+                    <label for="special-char-toggle" class="toggle-switch-label"></label>
+                </div>
+            </div>
+
+            <!-- Toggle Use Numbers -->
+            <div class="toggle-container">
+                <label for="numbers-toggle">Use Numbers?</label>
+                <div class="toggle-switch">
+                    <input type="checkbox" id="numbers-toggle" class="toggle-switch-checkbox">
+                    <label for="numbers-toggle" class="toggle-switch-label"></label>
+                </div>
+            </div>
+
+        </div> 
+
+        <button id="password-button">Generate Passwords</button>
         <div class="divider"></div>
         <div class="password-container">
             <p id="password-1">Password 1</p>
             <p id="password-2">Password 2</p>
         </div>  
     </div>
+</div>
     <script src="index.js"></script>
 </body>
 </html>

@@ -1,27 +1,18 @@
-/* simple css reset */
+/* Simple CSS Reset */
 html {
-    box-sizing: border-box;
-    font-size: 16px;
-  }
-  
-  *, *:before, *:after {
-    box-sizing: inherit;
-  }
-  
-  body, h1, h2, h3, h4, h5, h6, p, ol, ul {
-    margin: 0;
-    padding: 0;
-    font-weight: normal;
-    font-family: 'Karla', sans-serif;
-  }
+  box-sizing: border-box;
+  font-size: 16px;
+}
 
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background: #171e28;
-  color: white;
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  font-family: 'Karla', sans-serif;
 }
 
 ol, ul {
@@ -33,23 +24,52 @@ img {
   height: auto;
 }
 
+/* Global Styles */
+body {
+  background: #171e28;
+  color: white;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Main Container */
+.main-container {
+  width: 100vw;  
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Dark Mode Toggle Container */
+.darkmode-toggle-container {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/* Container */
 .container {
   width: 80%;
   max-width: 600px;
-  padding: 60px;    
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 60px;
   background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
 }
 
 .divider {
   height: 2px;
   width: 100%;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   background-color: rgba(148, 148, 148, 0.1);
-  margin: 20px 0
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
 }
 
+/* Headings */
 h1 {
   text-align: center;
 }
@@ -60,23 +80,24 @@ h1 > span {
 }
 
 h2 {
-  margin-top: 20px;
-  margin-bottom: 40px;
+  margin: 20px 0 40px;
   text-align: center;
 }
 
+/* Password Button */
 #password-button {
   padding: 10px 0;
   width: 200px;
-  border-style: none;
+  border: none;
   border-radius: 5px;
   background: #3fb46e;
   color: rgb(235, 232, 232);
-  font-weight: bold;  
+  font-weight: bold;
   display: block;
-  margin: 30px auto 40px auto
+  margin: 30px auto 40px;
 }
 
+/* Password Containers */
 .password-container {
   display: flex;
   flex-wrap: wrap;
@@ -86,8 +107,7 @@ h2 {
   margin: 0 auto;
 }
 
-#password-1,
-#password-2 {
+#password-1, #password-2 {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -102,14 +122,177 @@ h2 {
   color: #3fb46e;
   font-weight: bold;
   cursor: pointer;
-  
-}
-@media screen and (max-width: 600px) {
-  #password-1,
-  #password-2 {
-    width: 90%; 
-    max-width: none; 
-    font-size: 16px; 
-  }
 }
 
+/* Password Selector & Toggle */
+.password-selector-container, .toggle-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.password-selector-container label {
+  font-weight: bold;
+  color: white;
+  margin-right: 10px;
+}
+
+.toggle-container label {
+  font-weight: bold;
+  color: white;
+  margin-right: 10px;;
+}
+
+#password-length {
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  background: #21283a;
+  color: #4ADF86;
+  font-weight: bold;
+  appearance: none;
+  cursor: pointer;
+  margin-top: 5px;
+  background: #21283a url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="%234ADF86" d="M31.3 192l121.5 121.5c4.7 4.7 12.3 4.7 17 0L291.3 192c4.7-4.7 4.7-12.3 0-17l-22.6-22.6c-4.7-4.7-12.3-4.7-17 0L160 273.9 68.2 152.5c-4.7-4.7-12.3-4.7-17 0L28.5 175c-4.7 4.7-4.7 12.3 0 17z"></path></svg>') no-repeat;
+  background-position: right 10px center;
+  border: 1px solid rgb(141, 141, 141);
+  background-size: 20px 20px;
+  padding-right: 40px; 
+}
+
+#password-length::-ms-expand {
+  display: none;
+}
+
+#special-char-toggle {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 65px;
+  height: 34px;
+}
+
+.toggle-switch-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  cursor: pointer;
+  border-radius: 34px;
+}
+
+.toggle-switch-label:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+#special-char-toggle:checked + .toggle-switch-label {
+  background-color: #4ADF86;
+}
+
+#special-char-toggle:checked + .toggle-switch-label:before {
+  transform: translateX(26px);
+}
+
+#numbers-toggle {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+#numbers-toggle:checked + .toggle-switch-label {
+  background-color: #4ADF86;
+}
+
+#numbers-toggle:checked + .toggle-switch-label:before {
+  transform: translateX(26px);
+}
+
+/* Light Mode/Dark Mode Inverse Styles */
+body.dark-mode {
+  background-color: #9fa5a4;
+  color: #171e28;
+}
+
+body.dark-mode .container {
+  background-color: rgba(200, 200, 200, 0.259);
+}
+
+
+body.dark-mode #password-length {
+  background: #D7D9DB url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="%23171e28" d="M31.3 192l121.5 121.5c4.7 4.7 12.3 4.7 17 0L291.3 192c4.7-4.7 4.7-12.3 0-17l-22.6-22.6c-4.7-4.7-12.3-4.7-17 0L160 273.9 68.2 152.5c-4.7-4.7-12.3-4.7-17 0L28.5 175c-4.7 4.7-4.7 12.3 0 17z"></path></svg>') no-repeat;
+  background-position: right 10px center;
+  background-size: 20px 20px;
+  border: 1px solid #171e28;
+  color: #171e28;
+}
+
+body.dark-mode h1 > span, body.dark-mode #password-1, body.dark-mode #password-2, body.dark-mode #password-button {
+  color: #649f7b; 
+}
+
+body.dark-mode #password-button {
+  background: #649f7b; 
+  color: #D7D9DB;
+  font-weight: bold;
+}
+
+body.dark-mode .toggle-switch-label {
+  background-color: #EFEFEF;
+}
+
+body.dark-mode #special-char-toggle:checked + .toggle-switch-label, body.dark-mode #numbers-toggle:checked + .toggle-switch-label {
+  background-color: #649f7b;
+}
+
+body.dark-mode .password-container {
+  border-color: #D7D9DB;
+}
+
+body.dark-mode .divider {
+  background-color: rgba(73, 130, 97, 0.7);
+}
+
+
+.darkmode-toggle-container .dark-mode-text {
+  display: inline;
+}
+
+.darkmode-toggle-container .light-mode-text {
+  display: none;
+}
+
+.dark-mode .darkmode-toggle-container .dark-mode-text {
+  display: none;
+}
+
+.dark-mode .darkmode-toggle-container .light-mode-text {
+  display: inline;
+}
+
+
+
+/* Responsive Styles */
+@media screen and (max-width: 600px) {
+  #password-1, #password-2 {
+      width: 90%;
+      max-width: none;
+      font-size: 16px;
+  }
+}
